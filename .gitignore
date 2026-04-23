@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+app/build/
+
+# Local config
+local.properties
+
+# Android Studio / VS Code
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keystore (IMPORTANT)
+*.jks
+*.keystore

@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A2E"
+    android:orientation="vertical">
+
+    <!-- ══ SCROLLABLE CONTENT ══ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ══ TOP BAR ══ -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:id="@+id/titleBlock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.2"
+                        android:text="EMERGENCY"
+                        android:textColor="#66FFFFFF"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/appTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RescueNet"
+                        android:textColor="#FFFFFF"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="8dp"
+                            android:layout_height="8dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/circle_green" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Network Active"
+                            android:textColor="#99FFFFFF"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvNetworkStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="● Searching..."
+                        android:textColor="#F1C40F"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- ══ SOS CARD ══ -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#E74C3C"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:id="@+id/sosButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ripple_transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:letterSpacing="0.2"
+                        android:text="EMERGENCY"
+                        android:textColor="#BFFFFFFF"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.05"
+                        android:text="I NEED HELP"
+                        android:textColor="#FFFFFF"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Tap to broadcast SOS across mesh network"
+                        android:textColor="#B2FFFFFF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ══ STATUS QUICK BUTTONS ══ -->
+            <LinearLayout
+                android:id="@+id/messageButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <!-- Safe -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#1E2B26"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/safeButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ripple_transparent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:text="&#10003;"
+                            android:textColor="#2ECC71"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="I am Safe"
+                            android:textColor="#2ECC71"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Medical -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#26251A"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/medicalButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ripple_transparent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:text="&#43;"
+                            android:textColor="#F1C40F"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Medical Help"
+                            android:textColor="#F1C40F"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Trapped -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#261E12"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/trappedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ripple_transparent"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="4dp"
+                            android:text="&#33;"
+                            android:textColor="#E67E22"
+                            android:textSize="26sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Trapped Here"
+                            android:textColor="#E67E22"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- ══ LOCATION ROW ══ -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#1E2A38"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/circle_blue" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.15"
+                            android:text="CURRENT LOCATION"
+                            android:textColor="#66FFFFFF"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/locationText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Fetching GPS signal..."
+                            android:textColor="#D9FFFFFF"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/gpsDot"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="@drawable/circle_yellow" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ══ OSMDroid MAP ══ -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#1B2C3E"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <org.osmdroid.views.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|start"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/badge_blue"
+                        android:paddingLeft="8dp"
+                        android:paddingTop="3dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="3dp"
+                        android:text="&#9679; LIVE"
+                        android:textColor="#3498DB"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ══ STATS ROW ══ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#1F1F2E"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.15"
+                            android:text="PEERS"
+                            android:textColor="#59FFFFFF"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/responderCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#FFFFFF"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginBottom="3dp"
+                                android:text="connected"
+                                android:textColor="#66FFFFFF"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="#1F1F2E"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0.15"
+                            android:text="MESH SIGNAL"
+                            android:textColor="#59FFFFFF"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/signalStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Searching"
+                            android:textColor="#F1C40F"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- ══ SECTION HEADER: MESSAGE FEED ══ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:letterSpacing="0.15"
+                android:text="MESH MESSAGES"
+                android:textColor="#59FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ══ MESSAGE FEED (fixed at bottom, scrollable) ══ -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMessages"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#12141F"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:clipToPadding="false" />
+
+</LinearLayout>

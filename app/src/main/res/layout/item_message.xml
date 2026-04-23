@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_marginBottom="6dp"
+    android:background="@drawable/bg_message_item">
+
+    <!-- Type + Time row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvMsgType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SOS"
+            android:textColor="#E74C3C"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvMsgTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:00:00"
+            android:textColor="#59FFFFFF"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- Sender -->
+    <TextView
+        android:id="@+id/tvMsgSender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Worker-001"
+        android:textColor="#99FFFFFF"
+        android:textSize="12sp" />
+
+    <!-- Content -->
+    <TextView
+        android:id="@+id/tvMsgContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Message content"
+        android:textColor="#D9FFFFFF"
+        android:textSize="13sp" />
+
+    <!-- Location + Hops row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:id="@+id/tvMsgLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0.0000, 0.0000"
+            android:textColor="#4DFFFFFF"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tvMsgHops"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hops: 0"
+            android:textColor="#4DFFFFFF"
+            android:textSize="10sp" />
+    </LinearLayout>
+</LinearLayout>
